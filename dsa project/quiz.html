@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>STACK QUIZ</title>
+    <link rel="stylesheet" type="text/css" href="quiz.css">
+    <link rel="stylesheet" href="newfinal.css">
+    <style>
+        .open-form-btn {
+            background-color: #259EE4; 
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            font-size: 16px;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-top: 20px;
+        }
+        .open-form-btn:hover {
+            background-color: #259EE4;
+        }
+
+        .content {
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Linked List-QUIZ</h1>
+    </header>
+
+
+<div class="container">
+    <aside id="sidebar" class="sidebar">
+        <button id="collapseBtn" class="collapse-btn"><h2>Lab Sections ☰</h2></button>
+        <nav>
+            <ul>
+                <li><a href="AIM.html">Aim</a></li>
+                <li><a href="algorithm.html">Algorithm</a></li>
+                <li><a href="pretest.html">Pretest</a></li>
+                <li><a href="video.html">Video </a></li>
+                <li><a href="simulation.html">Simulation</a></li>
+                <li><a href="postest.html">Posttest</a></li>
+                <li><a href="quiz.html"> Quiz</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+        <main id="mainContent" class="content">
+            <div class="centered-content">
+                <section class="questions">
+                    <h2>Questions</h2>
+                    <div id="question-container">
+                      
+                    </div>    
+                    <button id="submit-quiz" class="btn">Submit Quiz</button>
+                </section>
+        
+                <section class="results">
+                    <h2>Results</h2>
+                    <p>You got <span id="correct">0</span> out of <span id="total">0</span> correct!</p>
+                    <button id="restart" class="btn">Restart Quiz</button>
+
+                    <h3>Kindly take a moment to fill out the feedback form</h3>
+                    <button class="open-form-btn" onclick="openGoogleForm()">Open Google Form</button>
+            
+                    <script>
+                        function openGoogleForm() {
+                            window.open(
+                                "https://docs.google.com/forms/d/e/1FAIpQLScAwKesMJ9kjxGcEfVYW0UEDh2s30bht2vK1pQFWbwcDN4nUQ/viewform",
+                                "_blank"
+                            );
+                        }
+                    </script>
+                </section>
+            </div>
+
+            
+    </main>
+   
+</div>
+<footer>
+    <p>&copy; 2024 Linked List QUIZ</p>
+</footer>
+
+    <script src="stackquiz.js"></script>
+    <script src="sidescript.js"></script>
+</body>
+</html>

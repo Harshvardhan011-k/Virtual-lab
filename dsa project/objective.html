@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab Sidebar - Aim</title> <!-- Change the title according to the page -->
+   <!-- Use the same CSS file for consistency -->
+      <link rel="stylesheet" href="newfinal.css">
+</head>
+<body>
+    
+    <div class="sidebar">
+        <h2>Lab Sections</h2>
+        <ul>
+            <li><a href="main.html">Aim</a></li>
+            <li><a href="objective.html">Objective</a></li>
+            <li><a href="pretest.html">Pretest</a></li>
+            <li><a href="simulation.html">Simulation</a></li>
+            <li><a href="posttest.html">Posttest</a></li>
+            <li><a href="video.html">Video</a></li>
+            <li><a href="quiz.html">Quiz</a></li>
+        </ul>
+    </div>
+
+    
+        <div class="content">
+            <section>
+                <h2>Algorithm</h2> <!-- Subheading for Aim -->
+                <p>Creation is initializing an empty linked list or adding a new nodes to form a list.
+                    Insertion is adding a new node at the beginning, end, or at specific position in the list.
+                    Traversal is Visiting each node in the list to read or display values.
+                    Deletion is removing a node from the beginning, end, or by value, adjusting pointers accordingly</p>
+            </section>
+    
+            <section>
+                <h2>Insertion at the end</h2>
+                <p>
+                    <ul>
+                   <li>Create a new node (newNode) with given data.</li>
+                   <li>If the linked list is empty (head == null), set head = newNode.</li>
+                   <li>Otherwise, traverse the linked list to the last node.</li>
+                   <li>Set the next pointer of the last node to newNode.</li>
+                   <li>newNode → next = null (this marks the new node as the end of the list).</li>
+                    </ul>
+                </p>
+            </section>
+    
+            <section>
+                <h2>Traversal through the linked list</h2>
+                <ul>
+                    <li><strong>Start with the head node:</strong> Initialize a pointer and set it to the head of the linked list.</li>
+                    <li><strong>Loop through the list:</strong>While current is not NULL:
+                        Print or process the data stored in the current node.
+                        Move the current pointer to the next node (current = current->next).</li>
+                    <li><strong>End of traversal:</strong> Once current is NULL, the traversal is complete, indicating that all nodes have been visited.</li>
+                </ul>
+            </section>
+    
+            <section>
+                <h2>Deletion by Value</h2>
+                
+                <ul>
+                    <li>If the list is empty, return.</li>
+                    <li>If the head node contains the value, update the head pointer to the next node.</li>
+                    <li>Otherwise, traverse the list to find the node to delete.</li>
+                    <li>Adjust the next pointer of the previous node to remove the node.</li>
+                </ul>
+            </section>
+        </div>
+        <footer class="footer">
+            <div class="footer-container">
+                <div class="footer-section quick-links">
+                   <b><u> <h4>Quick Links</h4></u></b>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#algoorithms">Algorithms</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section contact-details">
+                    <b><u>  <h4>Get in touch with us!</h4> </u> </b>
+                   <p>Email: DSAproject@gmail.com</p> 
+                    <p></p>
+                    <p>Address: Shri Ramdeobaba College of </p>
+                    <p>Engineering & Management,Nagpur </p>
+                    <p>Pin :  440013</p>
+                </div>
+                <div class="footer-section qr-code">
+                    
+                    <img src="QR.jpg" alt="QR Code">
+                </div>
+            </div>
+        </footer>
+</body>
+</html>
