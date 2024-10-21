@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hashing Simulation - Division Method</title>
+  <link rel="stylesheet" href="simulationstyle.css">
+  <link rel="stylesheet" href="newfinal.css">
+  <link rel="stylesheet" href="hash.css">
+</head>
+<body>
+  <header>
+    <h1>VIRTUAL LABS</h1>
+    <div class="header-image">
+      <img src="logo.png" alt="Logo">
+    </div>
+    <nav>
+      <ul>
+        <li><a href="searching.html">Searching/Sorting</a></li>
+        <li><a href="hashing.html">Hashing</a></li>
+        <li><a href="linkedlist.html">Linked List</a></li>
+        <li><a href="stack.html">Stack</a></li>
+        <li><a href="trees.html">Tree/Graph</a></li>
+        <div class="back-image">
+          <a href="video.html"><img src="backbutton.png"></a>
+        </div>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="container">
+    <aside id="sidebar" class="sidebar">
+      <button id="collapseBtn" class="collapse-btn"><h2>Lab Sections ☰</h2></button>
+      <nav>
+        <ul>
+          <li><a href="AIM.html">Aim</a></li>
+          <li><a href="hashalgorithm.html">Algorithm</a></li>
+          <li><a href="hashpretest.html">Pretest</a></li>
+          <li><a href="video.html">Video</a></li>
+          <li><a href="hashsimulation.html">Simulation</a></li>
+          <li><a href="hashposttest.html">Posttest</a></li>
+          <li><a href="hashquiz.html">Quiz</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <main id="mainContent" class="content">
+      <div class="centered-content">
+        <!-- Hashing Simulation Section -->
+        <div class="container2">
+          <h1>Hashing Simulation with Division Method</h1>
+          <p><small>Enter an element and table size:</small></p>
+          <input type="number" id="inputValue" placeholder="Enter value">
+          <input type="number" id="inputTableSize" placeholder="Enter table size">
+          <button onclick="insertIntoHashTable()">Insert into Hash Table</button>
+          
+          <div id="result">
+            <h2>Hash Table</h2>
+            <ul id="hashTable"></ul>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-section quick-links">
+        <b><u><h4>Quick Links</h4></u></b>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#algorithms">Algorithms</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-section contact-details">
+        <b><u><h4>Get in touch with us!</h4></u></b>
+        <p>Email: DSAproject@gmail.com</p>
+        <p>Address: Shri Ramdeobaba College of Engineering & Management, Nagpur</p>
+        <p>Pin: 440013</p>
+      </div>
+      <div class="footer-section qr-code">
+        <img src="QR.jpg" alt="QR Code">
+      </div>
+    </div>
+  </footer>
+
+  <script src="hashsimulation.js"></script>
+  <script src="sidescript.js"></script>
+</body>
+</html>

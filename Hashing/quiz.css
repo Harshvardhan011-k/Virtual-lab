@@ -1,0 +1,101 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+header {
+    background-color: #259EE4; /* Green color */
+    color: #fff;
+    padding: 1em;
+    text-align: justify;
+}
+
+h1 {
+    margin: 0;
+}
+
+.questions, .results {
+    background-color: #fff;
+    padding: 1em;
+    margin: 1em auto;
+    width: 60%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.results {
+    display: none;
+    text-align: center;
+}
+
+.btn {
+    background: #259EE4; /* Green color for buttons */
+    color: #fff;
+    font-weight: bold;
+    padding: 10px 20px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    display: inline-block;
+    text-align: left;
+}
+
+.btn:hover {
+    background-color: #259EE4; /* Darker green on hover */
+}
+
+.answer-btn {
+    background: #fff;
+    color: #333;
+    font-weight: 500;
+    border: 1px solid #333;
+    padding: 10px;
+    width: 100%;
+    margin: 5px 0;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    display: flex;
+    align-items: center;
+}
+
+.answer-btn:hover {
+    background: #08466a; /* Black on hover */
+    color: #fff;
+}
+
+.answer-btn.selected {
+    background: #259EE4; /* Highlight selected answer with green */
+    color: #fff;
+}
+
+.answer-btn span {
+    background: #045280; /* Green color for labels */
+    color: #fff;
+    border-radius: 50%;
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
+    text-align: center;
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+ul {
+    list-style-type: none; /* Removes dots from option boxes */
+    padding: 0;
+}
+
+.question-block {
+    margin-bottom: 20px;
+}
+
+.error-message {
+    color: red;
+    font-size: 0.9em;
+    margin-top: 5px;
+}

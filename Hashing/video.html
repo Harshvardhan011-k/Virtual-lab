@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video (Stack)</title>
+    <style>
+        .video-container {
+            width: 90%;
+            max-width: 800px;
+        }
+        .centered-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .video-container img {
+            width: 100%;
+            cursor: pointer;
+            justify-content: center;
+        }
+        .video-container iframe {
+            width: 100%;
+            height: 500px;
+            display: none;
+        }
+    </style>
+    <link rel="stylesheet" href="newfinal.css">
+</head>
+<body>
+<header>
+    <h1>VIRTUAL LABS</h1>
+    <div class="header-image">
+        <img src="logo.png" alt="Logo">
+    </div>
+    <nav>
+        <ul>
+            <li><a href="searching.html">Searching/Sorting</a></li>
+            <li><a href="hashing.html">Hashing</a></li>
+            <li><a href="linkedlist.html">Linked List</a></li>
+            <li><a href="stack.html">Stack</a></li>
+            <li><a href="trees.html">Tree/Graph</a></li>
+            <div class="back-image">
+                <a href="hashpretest.html"><img src="backbutton.png"></a>
+            </div> 
+        </ul>
+    </nav>
+</header>
+
+<div class="container">
+    <aside id="sidebar" class="sidebar">
+        <button id="collapseBtn" class="collapse-btn"><h2>Lab Sections ☰</h2></button>
+        <nav>
+            <ul>
+                <li><a href="AIM.html">Aim</a></li>
+                <li><a href="objective.html">Algorithm</a></li>
+                <li><a href="hashpretest.html">Pretest</a></li>
+                <li><a href="video.html">Video </a></li>
+                <li><a href="hashsimulation.html">Simulation</a></li>
+                <li><a href="hashposttest.html">Posttest</a></li>
+                <li><a href="hashquiz.html">Quiz</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <main id="mainContent" class="content">
+        <div class="center">
+            <h1>HASHING</h1>
+        </div>
+        <div class="centered-content">
+            <div class="video-container" id="videoContainer">
+                <!-- YouTube thumbnail -->
+                <img src="https://img.youtube.com/vi/MlUTlQnfcxo/maxresdefault.jpg" 
+                     alt="YouTube Video Thumbnail" 
+                     id="thumbnail">
+                
+                <!-- YouTube video iframe (initially hidden) -->
+                <iframe id="youtubeVideo" 
+                        src="" 
+                        frameborder="0" 
+                        allow="autoplay; encrypted-media" 
+                        allowfullscreen></iframe>
+            </div>
+        </div>
+    </main>
+</div>
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-section quick-links">
+           <b><u><h4>Quick Links</h4></u></b>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#algoorithms">Algorithms</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+        <div class="footer-section contact-details">
+            <b><u><h4>Get in touch with us!</h4></u></b>
+           <p>Email: DSAproject@gmail.com</p> 
+            <p></p>
+            <p>Address: Shri Ramdeobaba College of </p>
+            <p>Engineering & Management, Nagpur </p>
+            <p>Pin :  440013</p>
+        </div>
+        <div class="footer-section qr-code">
+            <img src="QR.jpg" alt="QR Code">
+        </div>
+    </div>
+</footer>
+<script>
+    document.getElementById('thumbnail').addEventListener('click', function() {
+        // Hide the thumbnail
+        this.style.display = 'none';
+        
+        // Show the video and start autoplay
+        const videoID = 'MlUTlQnfcxo';
+        const youtubeVideo = document.getElementById('youtubeVideo');
+        youtubeVideo.src = `https://www.youtube.com/embed/${videoID}?autoplay=1`; // Use the embed link
+        youtubeVideo.style.display = 'block'; // Show the iframe
+    });
+</script>
+<script src="sidescript.js"></script>
+
+</body>
+</html>

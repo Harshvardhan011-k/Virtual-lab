@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collapsible Sidebar with Header</title>
+    <link rel="stylesheet" href="newfinal.css">
+</head>
+<body>
+    <header>
+        <h1>VIRTUAL LABS</h1>
+        <div class="header-image">
+            <img src="logo.png" alt="Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="searching.html">Searching/Sorting</a></li>
+                <li><a href="hashing.html">Hashing</a></li>
+                <li><a href="linkedlist.html">Linked List</a></li>
+                <li><a href="stack.html">Stack</a></li>
+                <li><a href="trees.html">Tree/Graph</a></li>
+                <div class="back-image">
+                    <a href="AIM.html"><img src="backbutton.png"></a>
+                </div> 
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <aside id="sidebar" class="sidebar">
+            <button id="collapseBtn" class="collapse-btn"><h2>Lab Sections ☰</h2></button>
+            <nav>
+                <ul>
+                    <li><a href="AIM.html">Aim</a></li>
+                    <li><a href="hashalgorithm.html">Algorithm</a></li>
+                    <li><a href="hashpretest.html">Pretest</a></li>
+                    <li><a href="video.html">Video </a></li>
+                    <li><a href="hashsimulation.html">Simulation</a></li>
+                    <li><a href="hashposttest.html">Posttest</a></li>
+                    <li><a href="hashquiz.html"> Quiz</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main id="mainContent" class="content">
+            <div class="center">
+                <h1>Hashing</h1>
+            </div>
+            <div class="centered-content">
+                <br>
+                <br>
+                <br>
+            </div>
+            <h2>Hashing Algorithm using Division Method</h2>
+            <br>
+            <h3>Algorithm Steps:</h3>
+            <br>
+            <ol>
+                <li><strong>Initialize Hash Table:</strong> Create an empty hash table of size <em>p</em>, where <em>p</em> is a prime number.</li>
+                <li><strong>Hash Function:</strong> Define the hash function: <em>hash(k) = k mod p</em>.</li>
+                <li><strong>Insertion:</strong>
+                    <ul>
+                        <li>For each key <em>k</em> to be inserted:</li>
+                        <li>Calculate the index using the hash function.</li>
+                        <li>If the index is empty, insert the key.</li>
+                        <li>If there is a collision, use chaining to resolve it.</li>
+                    </ul>
+                </li>
+                <li><strong>Retrieval:</strong>
+                    <ul>
+                        <li>To retrieve a key <em>k</em>:</li>
+                        <li>Calculate the index using the hash function.</li>
+                        <li>Check the list at that index for the key.</li>
+                    </ul>
+                </li>
+                <li><strong>Handling Collisions:</strong> Use a technique such as chaining or open addressing.</li>
+            </ol>
+        </main>
+    </div>
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section quick-links">
+                <b><u><h4>Quick Links</h4></u></b>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#algoorithms">Algorithms</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section contact-details">
+                <b><u><h4>Get in touch with us!</h4></u></b>
+                <p>Email: DSAproject@gmail.com</p> 
+                <p>Address: Shri Ramdeobaba College of</p>
+                <p>Engineering & Management, Nagpur</p>
+                <p>Pin: 440013</p>
+            </div>
+            <div class="footer-section qr-code">
+                <img src="QR.jpg" alt="QR Code">
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="sidescript.js"></script>
+</body>
+</html>
