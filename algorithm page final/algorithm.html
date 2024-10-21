@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VIRTUAL LABS</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+<link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="algorithm.css">
+    <style>
+    </style>
+</head>
+<body>
+  
+    
+    <header>
+        <h1>VIRTUAL LABS</h1>
+        <div class="header-image"> <img src="logo.png"></div>
+        <nav>
+            <ul>
+                <li><a href="searching.html">Searching</a></li>
+                <li><a href="searching.html">Sorting</a></li>
+                <li><a href="hashing.html">Hashing </a></li>
+                <li><a href="linkedlist.html">Linked List</a></li>
+                <li><a href="/stack/AIM.html">Stack</a></li>
+                <li><a href="trees.html">Trees</a></li>
+                <div class="back-image">
+                    <a href="home.html"><img src = "backbutton.png"></a>
+                </div> 
+            </ul>
+        </nav>
+    </header>
+    <div class="container-fluid bg-primary py-5 mb-5 page-header">
+        <div class="container py-5">
+            <div class="row justify-content-center">
+                <div class="col-lg-10 text-center">
+                    <h1 class="display-3 text-white animated slideInDown">Courses</h1>
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb justify-content-center">
+                            <li class="breadcrumb-item"><a class="text-white" href="index.html"><h2>Home</h2></a></li>
+                            <li class="breadcrumb-item text-white active" aria-current="page"><h3>Courses</h3></li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+    <main>
+       
+        <div class="auto-write-container">
+            <span class="auto-write-text"></span>
+          </div><script>
+            document.addEventListener('DOMContentLoaded', function () {
+                const text = "Welcome to Virtual Lab, Lets Study !" ;
+                
+                const autoWriteText = document.querySelector('.auto-write-text');
+                let index = 0;
+        
+                function typeWriter() {
+                    if (index < text.length) {
+                        autoWriteText.innerHTML += text.charAt(index);
+                        index++;
+                        setTimeout(typeWriter, 100); // Adjust the speed (in milliseconds) as needed
+                    }
+                }
+        
+                typeWriter();
+            });
+        </script>
+        
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                const algoBlocks = document.querySelectorAll('.algo-block');
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('animate__fadeInUp');
+                            observer.unobserve(entry.target); // Remove the observer once animation is triggered
+                        }
+                    });
+                }, { threshold: 0.1 });
+        
+                algoBlocks.forEach(block => {
+                    observer.observe(block);
+                });
+            });
+        </script>
+        
+        <a href="searching.html"> 
+        <section class="algo-block">
+            <div class="algo-image">
+                <img src="searching2.png">
+            </div>
+            <h2>Searching</h2>
+            <a href="searching.html">Let's Study</a>
+            </a>
+    </section>
+        <a href="searching.html">
+            <section class="algo-block">
+                <div class="algo-image">
+                    <img src="sorting2.png">
+                </div>
+                <h2>Sorting</h2>
+                <a href="searching.html">Let's Study</a>
+                </a>
+            </section>
+        <a href="hashing.html">
+        <section class="algo-block">
+            <div class="algo-image">
+                <img src="hashing.png">
+            </div>
+            <h2>Hashing</h2>
+            <a href="hashing.html">Let's Study</a>
+        </a>
+        </section>
+        <a href="linkedlist.html">
+        <section class="algo-block">
+            <div class="algo-image">
+                <img src="linkedlist2.png">
+            </div>
+            <h2>Linked List</h2>
+            <a href="linkedlist.html">Let's Study</a>
+        </a>
+        </section>
+        <a href="/stack/AIM.html">
+        <section class="algo-block">
+            <div class="algo-image">
+                <img src="Stacks.png">
+            </div>
+            <h2>Stack</h2>
+            <a href="/stack/AIM.html">Let's Study</a>
+        </a>
+        </section>
+        <a href="trees.html">
+
+        <section class="algo-block">
+            <div class="algo-image">
+                <img src="trees.png">
+            </div>
+            <h2>Trees</h2>
+            <a href="trees.html">Let's Study</a>
+        </a>
+        </section>
+    
+    </main>
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section quick-links">
+               <b><u> <h4>Quick Links</h4></u></b>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#algoorithms">Algorithms</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section contact-details">
+                <b><u>  <h4>Get in touch with us!</h4> </u> </b>
+               <p>Email: DSAproject@gmail.com</p> 
+                <p></p>
+                <p>Address: Shri Ramdeobaba College of </p>
+                <p>Engineering & Management,Nagpur </p>
+                <p>Pin :  440013</p>
+            </div>
+            <div class="footer-section qr-code">
+                
+                <img src="QR.jpg" alt="QR Code">
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
