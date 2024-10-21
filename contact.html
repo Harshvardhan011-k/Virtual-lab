@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-image: url('background.jpg'); /* Add your background image URL here */
+            background-size: cover; /* Cover the entire page */
+            background-position: center; /* Center the background image */
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column; /* Stack header and container */
+            align-items: center; /* Center align items */
+            min-height: 100vh; /* Ensure full height */
+            opacity: 0.9; /* Slightly transparent for better text readability */
+        }
+        header {
+            text-align: center; /* Center align the header */
+            margin-bottom: 0px; /* Add space below the header */
+        }
+        h1 {
+            color: #4CAF50;
+            font-size: 2.5em;
+        }
+        .container {
+            display: flex;
+            justify-content: center; /* Center the container */
+            align-items: center; /* Center the items vertically */
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+            background-color: white; /* Background of the container */
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            flex-wrap: wrap; /* Allow wrapping */
+            gap: 20px; /* Space between items */
+        }
+        .text-content {
+            max-width: 600px;
+            line-height: 1.6;
+        }
+        .text-content h2 {
+            color: #4CAF50;
+            margin-top: 20px;
+        }
+        .team-list {
+            list-style-type: none; /* Remove bullet points */
+            padding: 0;
+            margin: 0;
+        }
+        .team-member {
+            margin-bottom: 15px;
+        }
+        .team-member span {
+            font-weight: bold;
+        }
+        .image-container {
+            flex: 1;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            justify-content: center; /* Center the image */
+            align-items: center; /* Center the image vertically */
+        }
+        .image-container img {
+            width: 70%;
+            height: auto;
+            transition: opacity 0.5s ease-in-out;
+            opacity: 1;
+        }
+        .image-container:hover img {
+            opacity: 0.7; /* Fade effect on hover */
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Contact Us</h1>
+</header>
+
+<div class="container">
+    <div class="text-content">
+        <h2>Our Team</h2>
+        <h3>We , the RCOEM team , are always available for your service. We are always ready to entertain your doubts.</h3>
+        <h3>We expect the feeedbacks and reviews from your side.</h3>
+        <p>Feel free to reach out to any of our team members on their respective email id's :</p>
+        <p> Scan QR code for technical issues/suggestions!</p>
+       <b><ul class="team-list">
+            <li class="team-member"><span>1. Himanshu Joshi :</span> joshihd@rknec.edu</li>
+            <li class="team-member"><span>2. Harshvardhan Kedia :</span> kediahg@rknec.edu</li>
+            <li class="team-member"><span>3. Harsh Barewar :</span> barewarhk@rknec.edu</li>
+            <li class="team-member"><span>4. Janhavi Naidu :</span> naidujr@rknec.edu</li>
+            <li class="team-member"><span>5. Himanshu Kanjani :</span> kanjwanihr@rknec.edu</li>
+           
+        </ul>
+    </b> 
+    </div>
+
+    <div class="image-container">
+        <img src="QR.jpg" alt="Contact Us Image"> <!-- Replace with your image -->
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objectives</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-image: url('background.jpg'); /* Add your background image URL here */
+            background-size: cover; /* Cover the entire page */
+            background-position: center; /* Center the background image */
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column; /* Stack header and container */
+            align-items: center; /* Center align items */
+            min-height: 100vh; /* Ensure full height */
+            opacity: 0.9; /* Slightly transparent for better text readability */
+        }
+        header {
+            text-align: center; /* Center align the header */
+            margin-bottom: 0px; /* Add space below the header */
+        }
+        h1 {
+            color: #4CAF50;
+            font-size: 2.5em;
+        }
+        .container {
+            display: flex;
+            justify-content: center; /* Center the container */
+            align-items: center; /* Center the items vertically */
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+            background-color: white; /* Background of the container */
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            flex-wrap: wrap; /* Allow wrapping */
+            gap: 20px; /* Space between items */
+        }
+        .text-content {
+            max-width: 600px;
+            line-height: 1.6;
+        }
+        .text-content h2 {
+            color: #4CAF50;
+            margin-top: 20px;
+        }
+        .objectives-list {
+            list-style-type: none; /* Remove bullet points */
+            padding: 0;
+            margin: 0;
+        }
+        .objective-item {
+            margin-bottom: 15px;
+        }
+        .objective-item span {
+            font-weight: bold;
+        }
+        .image-container {
+            flex: 1;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            justify-content: center; /* Center the image */
+            align-items: center; /* Center the image vertically */
+        }
+        .image-container img {
+            width: 70%;
+            height: auto;
+            transition: opacity 0.5s ease-in-out;
+            opacity: 1;
+        }
+        .image-container:hover img {
+            opacity: 0.7; /* Fade effect on hover */
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Our Objectives</h1>
+</header>
+
+<div class="container">
+    <div class="text-content">
+        <h2>Mission Statement</h2>
+        <p>At RCOEM, our mission is to provide quality education and empower students to excel in their fields while fostering innovation and critical thinking.</p>
+        
+        <h2>Our Objectives</h2>
+        <ul class="objectives-list">
+            <li class="objective-item"><span>1. Academic Excellence:</span> Striving for the highest standards in teaching and learning.</li>
+            <li class="objective-item"><span>2. Holistic Development:</span> Fostering personal and professional growth through extracurricular activities.</li>
+            <li class="objective-item"><span>3. Industry Collaboration:</span> Building strong partnerships with industry to enhance employability.</li>
+            <li class="objective-item"><span>4. Research and Innovation:</span> Encouraging research initiatives to drive technological advancements.</li>
+            <li class="objective-item"><span>5. Community Engagement:</span> Actively participating in community service and outreach programs.</li>
+        </ul>
+    </div>
+
+    <div class="image-container">
+        <img src="objectives.jpg" alt="Objectives Image"> <!-- Replace with your image -->
+    </div>
+</div>
+
+</body>
+</html>
