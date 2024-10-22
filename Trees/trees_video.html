@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trees Video</title>
+    <link rel="stylesheet" href="newfinal.css">
+    <style>
+        .video-container {
+            width: 100%;
+            max-width:800px;
+            align-items: center;
+            justify-content: center;
+        }
+        .centered-content{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh; /* Full viewport height */
+            margin: 0; /* Remove any default margin */
+            padding: 0;
+        }
+        .video-container img {
+            width: 100%;
+            cursor: pointer;
+            justify-content: center;
+            display: block;
+        }
+        .video-container iframe {
+            width: 100%;
+            height: 500px;
+            display: none;
+        }
+    </style>
+</head>
+<body><header>
+    <h1>VIDEO</h1>
+    <div class="header-image">
+        <img src="logo.png" alt="Logo">
+    </div>
+    <nav>
+        <ul>
+            <li><a href="searching.html">Searching/Sorting</a></li>
+            <li><a href="hashing.html">Hashing</a></li>
+            <li><a href="linkedlist.html">Linked List</a></li>
+            <li><a href="stack.html">Stack</a></li>
+            <li><a href="trees_aim.html">Tree/Graph</a></li>
+            <div class="back-image">
+                <a href="trees_aim.html"><img src = "backbutton.png"></a>
+            </div> 
+        </ul>
+    </nav>
+</header>
+
+<div class="container">
+    <aside id="sidebar" class="sidebar">
+        <button id="collapseBtn" class="collapse-btn"><h2>Lab Sections ☰</h2></button>
+        <nav>
+            <ul>
+                <li><a href="trees_aim.html">Aim</a></li>
+                <li><a href="trees_algorithm.html">Algorithm</a></li>
+                <li><a href="trees_pretest.html">Pretest</a></li>
+                <li><a href="trees_video.html">Video </a></li>
+                <li><a href="trees_simulation.html">Simulation</a></li>
+                <li><a href="trees_posttest.html">Posttest</a></li>
+                <li><a href="trees_quiz.html"> Quiz</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <main id="mainContent" class="content">
+        <div class="center">
+            <h1>Binary Search Tree</h1>
+        </div>
+        <div class="centered-content">
+              <div class="video-container" id="videoContainer">
+    <!-- YouTube thumbnail -->
+    <img src="https://i.ytimg.com/vi/ScdwdSCnXDU/maxresdefault.jpg" alt="YouTube Video Thumbnail" id="thumbnail">
+    
+    <!-- YouTube video iframe (initially hidden) -->
+    <iframe id="youtubeVideo" src="https://www.youtube.com/embed/ScdwdSCnXDU" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+</div>
+</div>
+</main>
+</div>
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-section quick-links">
+           <b><u> <h4>Quick Links</h4></u></b>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#algoorithms">Algorithms</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+        <div class="footer-section contact-details">
+            <b><u>  <h4>Get in touch with us!</h4> </u> </b>
+           <p>Email: DSAproject@gmail.com</p> 
+            <p></p>
+            <p>Address: Shri Ramdeobaba College of </p>
+            <p>Engineering & Management,Nagpur </p>
+            <p>Pin :  440013</p>
+        </div>
+        <div class="footer-section qr-code">
+            
+            <img src="QR.jpg" alt="QR Code">
+        </div>
+    </div>
+</footer>
+<script>
+    document.getElementById('thumbnail').addEventListener('click', function() {
+        // Hide the thumbnail
+        this.style.display = 'none';
+        
+        // Show the video and start autoplay
+        document.getElementById('youtubeVideo').style.display = 'block';
+    });
+</script>
+<script>
+    const collapseBtn = document.getElementById('collapseBtn');
+    const sidebar = document.getElementById('sidebar');
+    const mainContent = document.getElementById('mainContent');
+
+    collapseBtn.addEventListener('click', () => {
+        sidebar.classList.toggle('collapsed');
+    });
+    let sidebr = document.getElementById("sidebar");
+    let lastScrollY = window.scrollY;
+    let isScrolling;
+
+    // Hide the sidebar when scrolling
+    window.addEventListener("scroll", function() {
+        // Hide sidebar while scrolling
+        sidebar.style.transition = "transform 0.3s ease";
+        sidebar.style.transform = "translateX(-100%)"; // Move sidebar off-screen
+
+        // Clear previous timeout
+        clearTimeout(isScrolling);
+
+        // Show the sidebar after scrolling stops
+        isScrolling = setTimeout(function() {
+            sidebar.style.transform = "translateX(0)"; // Move sidebar back on-screen
+        }, 300); // Sidebar reappears 300ms after scrolling stops
+    });
+
+</script>
+
+</body>
+</html>

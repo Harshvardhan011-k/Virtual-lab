@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trees Algorithm</title>
+    <link rel="stylesheet" href="newfinal.css">
+</head>
+<body>
+    <header>
+        <h1>ALGORITHM</h1>
+        <div class="header-image">
+            <img src="logo.png" alt="Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="searching.html">Searching/Sorting</a></li>
+                <li><a href="hashing.html">Hashing</a></li>
+                <li><a href="linkedlist.html">Linked List</a></li>
+                <li><a href="stack.html">Stack</a></li>
+                <li><a href="trees_aim.html">Tree/Graph</a></li>
+                <div class="back-image">
+                    <a href="trees_aim.html"><img src = "backbutton.png"></a>
+                </div> 
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <aside id="sidebar" class="sidebar">
+            <button id="collapseBtn" class="collapse-btn"><h2>Lab Sections ☰</h2></button>
+            <nav>
+                <ul>
+                    <li><a href="trees_aim.html">Aim</a></li>
+                    <li><a href="trees_algorithm.html">Algorithm</a></li>
+                    <li><a href="trees_pretest.html">Pretest</a></li>
+                    <li><a href="trees_video.html">Video </a></li>
+                    <li><a href="trees_simulation.html">Simulation</a></li>
+                    <li><a href="trees_posttest.html">Posttest</a></li>
+                    <li><a href="trees_quiz.html"> Quiz</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+            <main class="mainContent" class="content" style="margin-top: 20px; margin-left: 50px; ">
+                <div class="content">
+                    <br>
+                    <h2>1. Insertion</h2>
+                    <br>
+                    <ul>
+                        Compare the node value with root.
+                        <li>If value <= root value, Move to left subtree</li>
+                        <li>Else move to right subtree</li>
+                        Recur until a NULL node is found
+                    </ul>
+                    <br><br>
+                    <h2>2. Traversal</h2>
+                    <ul>
+                        <br>Inorder
+                        <li>Recur left subtree until next node is NULL</li>
+                        <li>Print the current node value</li>
+                        <li>Recur right subtree until next node is NULL</li>
+                        <br>Preorder
+                        <li>Print the current node value</li>
+                        <li>Recur left subtree until next node is NULL</li>
+                        <li>Recur right subtree until next node is NULL</li>
+                        <br>Postorder
+                        <li>Recur left subtree until next node is NULL</li>
+                        <li>Recur right subtree until next node is NULL</li>
+                        <li>Print the current node value</li>
+                    </ul>
+                    <br><br>
+                    <h2>3. Deletion</h2>
+                    <br>
+                    <ul>
+                        <li>If node is a leaf node, remove node directly</li>
+                        <li>Link previous node to deleted parent's child if only one child exists</li>
+                        <li>Replace the node's value with its in-order successor if it has two children.</li>
+                    </ul>
+                </div>
+            </main>                  
+    </div>
+    <footer class="footer" style="margin-top: 50px;">
+        <div class="footer-container">
+            <div class="footer-section quick-links">
+               <b><u> <h4>Quick Links</h4></u></b>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#algoorithms">Algorithms</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section contact-details">
+                <b><u>  <h4>Get in touch with us!</h4> </u> </b>
+               <p>Email: DSAproject@gmail.com</p> 
+                <p></p>
+                <p>Address: Shri Ramdeobaba College of </p>
+                <p>Engineering & Management,Nagpur </p>
+                <p>Pin :  440013</p>
+            </div>
+            <div class="footer-section qr-code">
+                
+                <img src="QR.jpg" alt="QR Code">
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const collapseBtn = document.getElementById('collapseBtn');
+        const sidebar = document.getElementById('sidebar');
+        const mainContent = document.getElementById('mainContent');
+
+        collapseBtn.addEventListener('click', () => {
+            sidebar.classList.toggle('collapsed');
+        });
+        let sidebr = document.getElementById("sidebar");
+        let lastScrollY = window.scrollY;
+        let isScrolling;
+
+        // Hide the sidebar when scrolling
+        window.addEventListener("scroll", function() {
+            // Hide sidebar while scrolling
+            sidebar.style.transition = "transform 0.3s ease";
+            sidebar.style.transform = "translateX(-100%)"; // Move sidebar off-screen
+
+            // Clear previous timeout
+            clearTimeout(isScrolling);
+
+            // Show the sidebar after scrolling stops
+            isScrolling = setTimeout(function() {
+                sidebar.style.transform = "translateX(0)"; // Move sidebar back on-screen
+            }, 300); // Sidebar reappears 300ms after scrolling stops
+        });
+
+    </script>
+</body>
+</html>

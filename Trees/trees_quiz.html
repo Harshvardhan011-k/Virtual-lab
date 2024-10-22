@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Trees Quiz</title>
+    <link rel="stylesheet" type="text/css" href="quiz.css">
+    <link rel="stylesheet" href="newfinal.css">
+</head>
+<body>
+    <header>
+        <h1>QUIZ</h1>
+        <div class="header-image">
+            <img src="logo.png" alt="Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="searching.html">Searching/Sorting</a></li>
+                <li><a href="hashing.html">Hashing</a></li>
+                <li><a href="linkedlist.html">Linked List</a></li>
+                <li><a href="stack.html">Stack</a></li>
+                <li><a href="trees_aim.html">Tree/Graph</a></li>
+                <div class="back-image">
+                    <a href="trees_aim.html"><img src = "backbutton.png"></a>
+                </div> 
+            </ul>
+        </nav>
+    </header>
+
+
+<div class="container">
+    <aside id="sidebar" class="sidebar">
+        <button id="collapseBtn" class="collapse-btn"><h2>Lab Sections ☰</h2></button>
+        <nav>
+            <ul>
+                <li><a href="trees_aim.html">Aim</a></li>
+                <li><a href="trees_algorithm.html">Algorithm</a></li>
+                <li><a href="trees_pretest.html">Pretest</a></li>
+                <li><a href="trees_video.html">Video </a></li>
+                <li><a href="trees_simulation.html">Simulation</a></li>
+                <li><a href="trees_posttest.html">Posttest</a></li>
+                <li><a href="trees_quiz.html"> Quiz</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+        <main id="mainContent" class="content">
+            <div class="centered-content">
+                <section class="questions">
+                    <h2>Questions</h2>
+                    <div id="question-container">
+                        <!-- All questions will be dynamically inserted here -->
+                    </div>    
+                    <button id="submit-quiz" class="btn">Submit Quiz</button>
+                </section>
+        
+                <section class="results">
+                    <h2>Results</h2>
+                    <p>You got <span id="correct">0</span> out of <span id="total">0</span> correct!</p>
+                    <button id="restart" class="btn">Restart Quiz</button>
+
+                    <h3>Kindly take a moment to fill out the feedback form</h3>
+                    <button class="open-form-btn" onclick="openGoogleForm()">Open Google Form</button>
+            
+                    <script>
+                        function openGoogleForm() {
+                            window.open(
+                                "https://docs.google.com/forms/d/e/1FAIpQLScAwKesMJ9kjxGcEfVYW0UEDh2s30bht2vK1pQFWbwcDN4nUQ/viewform",
+                                "_blank"
+                            );
+                        }
+                    </script>
+                    <script>
+                        const quizData = [
+                            {
+                                question: "What is a binary search tree?",
+                                answers: [
+                                    { text: "A tree where each node has at most two children and is sorted.", correct: true },
+                                    { text: "A tree where every node has two children.", correct: false },
+                                    { text: "A tree where nodes can have any number of children.", correct: false },
+                                    { text: "A tree with no nodes.", correct: false },
+                                ],
+                            },
+                            {
+                                question: "Which of the following is a property of binary trees?",
+                                answers: [
+                                    { text: "They can have more than two children.", correct: false },
+                                    { text: "They must be balanced.", correct: false },
+                                    { text: "The height is defined by the longest path from root to leaf.", correct: true },
+                                    { text: "They have at least one child.", correct: false },
+                                ],
+                            },
+                            {
+                                question: "In which order does postorder traversal visit nodes?",
+                                answers: [
+                                    { text: "Root, left, right", correct: false },
+                                    { text: "Left, right, root", correct: true },
+                                    { text: "Left, root, right", correct: false },
+                                    { text: "Right, left, root", correct: false },
+                                ],
+                            },
+                            {
+                                question: "What is a balanced binary tree?",
+                                answers: [
+                                    { text: "A tree where all nodes are equal.", correct: false },
+                                    { text: "A tree where the left and right subtrees of any node differ in height by at most one.", correct: true },
+                                    { text: "A tree where all nodes have two children.", correct: false },
+                                    { text: "A tree that has only one path from root to leaf.", correct: false },
+                                ],
+                            },
+                            {
+                                question: "How many nodes does a complete binary tree with h height have at maximum?",
+                                answers: [
+                                    { text: "2^h - 1", correct: false },
+                                    { text: "2^h", correct: true },
+                                    { text: "h + 1", correct: false },
+                                    { text: "h^2", correct: false },
+                                ],
+                            },
+                            {
+                                question: "What is the main purpose of a binary search tree?",
+                                answers: [
+                                    { text: "To store data randomly.", correct: false },
+                                    { text: "To facilitate faster search operations.", correct: true },
+                                    { text: "To store data in a linear format.", correct: false },
+                                    { text: "To ensure data is duplicated.", correct: false },
+                                ],
+                            },
+                            {
+                                question: "Which traversal visits nodes in this order: root, right subtree, left subtree?",
+                                answers: [
+                                    { text: "Preorder", correct: true },
+                                    { text: "Inorder", correct: false },
+                                    { text: "Postorder", correct: false },
+                                    { text: "Level-order", correct: false },
+                                ],
+                            },
+                            {
+                                question: "What happens when a duplicate value is inserted into a binary search tree?",
+                                answers: [
+                                    { text: "It replaces the existing node.", correct: false },
+                                    { text: "It is ignored.", correct: false },
+                                    { text: "It is inserted in the left subtree.", correct: true },
+                                    { text: "It causes an error.", correct: false },
+                                ],
+                            },
+                            {
+                                question: "What is the time complexity of deleting a node from a binary search tree?",
+                                answers: [
+                                    { text: "O(1)", correct: false },
+                                    { text: "O(log n)", correct: true },
+                                    { text: "O(n)", correct: false },
+                                    { text: "O(n^2)", correct: false },
+                                ],
+                            },
+                            {
+                                question: "What type of tree allows searching, inserting, and deleting in O(log n) time?",
+                                answers: [
+                                    { text: "Linked list", correct: false },
+                                    { text: "Binary search tree", correct: true },
+                                    { text: "Heap", correct: false },
+                                    { text: "Array", correct: false },
+                                ],
+                            },
+                        ];
+
+
+                        // Select the HTML elements
+                        const questionContainer = document.querySelector("#question-container");
+                        const resultsContainer = document.querySelector(".results");
+                        const submitButton = document.querySelector("#submit-quiz");
+                        const restartButton = document.querySelector("#restart");
+                        const totalSpan = document.querySelector("#total");
+                        const correctSpan = document.querySelector("#correct");
+
+                        const answerLabels = ["A", "B", "C", "D"];
+
+                        // Function to shuffle array
+                        function shuffleArray(array) {
+                            for (let i = array.length - 1; i > 0; i--) {
+                                const j = Math.floor(Math.random() * (i + 1));
+                                [array[i], array[j]] = [array[j], array[i]];
+                            }
+                            return array;
+                        }
+
+                        // Function to select 5 random questions from the quizData
+                        function getRandomQuestions(data) {
+                            const shuffled = shuffleArray(data);
+                            return shuffled.slice(0, 5);
+                        }
+
+                        // Function to populate the HTML with 5 random questions and answer options
+                        function showQuestions() {
+                            const randomQuestions = getRandomQuestions(quizData);
+                            questionContainer.innerHTML = randomQuestions.map((question, index) => `
+                                <div class="question-block">
+                                    <p>${index + 1}. ${question.question}</p>
+                                    <ul>
+                                        ${question.answers.map((answer, i) => `
+                                            <li>
+                                                <button class="answer-btn" data-question="${index}" data-correct="${answer.correct}">
+                                                    <span>${answerLabels[i]}</span> ${answer.text}
+                                                </button>
+                                            </li>
+                                        `).join("")}
+                                    </ul>
+                                    <p class="error-message" id="error-${index}"></p>
+                                </div>
+                            `).join("");
+                        }
+
+                        // Function to calculate the result based on the selected answers
+                        function calculateResults() {
+                            let allAnswered = true;
+                            const answerButtons = document.querySelectorAll(".answer-btn");
+                            let numCorrect = 0;
+
+                            // Clear previous error messages
+                            document.querySelectorAll(".error-message").forEach(msg => msg.textContent = "");
+
+                            answerButtons.forEach(button => {
+                                if (button.classList.contains("selected")) {
+                                    const questionIndex = button.getAttribute("data-question");
+                                    const isCorrect = button.getAttribute("data-correct") === "true";
+
+                                    if (isCorrect) {
+                                        numCorrect++;
+                                    }
+                                } else {
+                                    // If a question has not been answered
+                                    const questionIndex = button.getAttribute("data-question");
+                                    const errorMessage = document.querySelector(`#error-${questionIndex}`);
+                                    if (!document.querySelector(`.answer-btn[data-question="${questionIndex}"].selected`)) {
+                                        errorMessage.textContent = "This is required";
+                                        allAnswered = false;
+                                    }
+                                }
+                            });
+
+                            if (allAnswered) {
+                                totalSpan.textContent = 5; // Update to show the total number of selected random questions
+                                correctSpan.textContent = numCorrect;
+
+                                // Hide questions section and show results
+                                document.querySelector(".questions").style.display = "none";
+                                resultsContainer.style.display = "block";
+                            }
+                        }
+
+                        // Function to restart the quiz
+                        function restartQuiz() {
+                            resultsContainer.style.display = "none";
+                            document.querySelector(".questions").style.display = "block";
+                            showQuestions();
+                        }
+
+                        // Add event listeners
+                        submitButton.addEventListener("click", calculateResults);
+                        restartButton.addEventListener("click", restartQuiz);
+
+                        // Initialize the quiz display
+                        showQuestions();
+
+                        // Add event listener to answer buttons for selection logic
+                        questionContainer.addEventListener("click", (e) => {
+                            if (e.target.classList.contains("answer-btn")) {
+                                const allAnswers = e.target.parentElement.parentElement.querySelectorAll(".answer-btn");
+                                allAnswers.forEach(btn => btn.classList.remove("selected"));
+                                e.target.classList.add("selected");
+                            }
+                        });
+                    </script>
+                    
+                </section>
+            </div>
+
+            
+    </main>
+   
+</div>
+<footer>
+    <p style="text-align: center;">&copy; 2024 TREES</p>
+</footer>
+
+<script>
+    const collapseBtn = document.getElementById('collapseBtn');
+    const sidebar = document.getElementById('sidebar');
+    const mainContent = document.getElementById('mainContent');
+
+    collapseBtn.addEventListener('click', () => {
+        sidebar.classList.toggle('collapsed');
+    });
+    let sidebr = document.getElementById("sidebar");
+    let lastScrollY = window.scrollY;
+    let isScrolling;
+
+    // Hide the sidebar when scrolling
+    window.addEventListener("scroll", function() {
+        // Hide sidebar while scrolling
+        sidebar.style.transition = "transform 0.3s ease";
+        sidebar.style.transform = "translateX(-100%)"; // Move sidebar off-screen
+
+        // Clear previous timeout
+        clearTimeout(isScrolling);
+
+        // Show the sidebar after scrolling stops
+        isScrolling = setTimeout(function() {
+            sidebar.style.transform = "translateX(0)"; // Move sidebar back on-screen
+        }, 300); // Sidebar reappears 300ms after scrolling stops
+    });
+
+</script>
+
+</body>
+</html>

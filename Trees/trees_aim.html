@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trees Aim</title>
+    <link rel="stylesheet" href="newfinal.css">
+</head>
+<body>
+    <header>
+        <h1>AIM</h1>
+        <div class="header-image">
+            <img src="logo.png" alt="Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="searching.html">Searching/Sorting</a></li>
+                <li><a href="hashing.html">Hashing</a></li>
+                <li><a href="linkedlist.html">Linked List</a></li>
+                <li><a href="stack.html">Stack</a></li>
+                <li><a href="trees_aim.html">Tree/Graph</a></li>
+                <div class="back-image">
+                    <a href="home.html"><img src = "backbutton.png"></a>
+                </div> 
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <aside id="sidebar" class="sidebar">
+            <button id="collapseBtn" class="collapse-btn"><h2>Lab Sections ☰</h2></button>
+            <nav>
+                <ul>
+                    <li><a href="trees_aim.html">Aim</a></li>
+                    <li><a href="trees_algorithm.html">Algorithm</a></li>
+                    <li><a href="trees_pretest.html">Pretest</a></li>
+                    <li><a href="trees_video.html">Video   </a></li>
+                    <li><a href="trees_simulation.html">Simulation</a></li>
+                    <li><a href="trees_pretest.html">Posttest</a></li>
+                    <li><a href="stacksquiz.html"> Quiz</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main id="mainContent" class="content" style="margin-top: 20px; margin-left: 50px; margin-right: 50px;">
+            <div class="content">
+                <br><br><br>
+                <h1 style="color: #659de6;"><strong>Binary Search Tree</strong></h1>
+                <br><br>
+                <h2 style="text-decoration: underline;">Estimated Time</h1>
+                <br>
+                <p>1 Hour</p>
+                <br><br>
+                <h2 style="text-decoration: underline;">Learning Objectives of the Experiment</h2>
+                <br>
+                <p>In this experiment on Binary search tree, we will learn the following:</p>
+                <br>
+                <ul>
+                    <li>Structure, representation and Implementation of BST.</li>
+                    <li>Getting acquainted with Terminologies related to trees, Binary trees and BST.</li>
+                    <li>Binary Search Tree property and differences between a binary tree and a binary search tree.</li>
+                    <li>Operations on BST, their algorithms and time and space complexity analysis.</li>
+                    <li>Uses and relationship with other data structures such as Dictionaries and priority Queues.</li>
+                    <li>Applications of a BST in searching, sorting etc.</li>
+                </ul>
+            </div>                        
+        </main>
+    </div>
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section quick-links">
+               <b><u> <h4>Quick Links</h4></u></b>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#algoorithms">Algorithms</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section contact-details">
+                <b><u>  <h4>Get in touch with us!</h4> </u> </b>
+               <p>Email: DSAproject@gmail.com</p> 
+                <p></p>
+                <p>Address: Shri Ramdeobaba College of </p>
+                <p>Engineering & Management,Nagpur </p>
+                <p>Pin :  440013</p>
+            </div>
+            <div class="footer-section qr-code">
+                
+                <img src="QR.jpg" alt="QR Code">
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const collapseBtn = document.getElementById('collapseBtn');
+        const sidebar = document.getElementById('sidebar');
+        const mainContent = document.getElementById('mainContent');
+
+        collapseBtn.addEventListener('click', () => {
+            sidebar.classList.toggle('collapsed');
+        });
+        let sidebr = document.getElementById("sidebar");
+        let lastScrollY = window.scrollY;
+        let isScrolling;
+
+        // Hide the sidebar when scrolling
+        window.addEventListener("scroll", function() {
+            // Hide sidebar while scrolling
+            sidebar.style.transition = "transform 0.3s ease";
+            sidebar.style.transform = "translateX(-100%)"; // Move sidebar off-screen
+
+            // Clear previous timeout
+            clearTimeout(isScrolling);
+
+            // Show the sidebar after scrolling stops
+            isScrolling = setTimeout(function() {
+                sidebar.style.transform = "translateX(0)"; // Move sidebar back on-screen
+            }, 300); // Sidebar reappears 300ms after scrolling stops
+        });
+
+    </script>
+</body>
+</html>
