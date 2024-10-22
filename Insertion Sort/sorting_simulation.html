@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insertion Sort Visualization</title>
+    <link rel="stylesheet" href="simulationstyle.css">
+    <link rel="stylesheet" href="newfinal.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        .array-container {
+            display: flex;
+            align-items: flex-end;
+            margin: 20px;
+        }
+
+        .bar {
+            width: 30px;
+            margin: 0 5px;
+            background-color: #4CAF50;
+            text-align: center;
+            color: white;
+            border-radius: 4px 4px 0 0;
+        }
+
+        .bar.sorted {
+            background-color: #2196F3;
+        }
+
+        .bar.active {
+            background-color: #FFC107;
+        }
+
+        .controls {
+            margin-top: 20px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 10px;
+            cursor: pointer;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        button:disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>VIRTUAL LABS</h1>
+        <div class="header-image">
+            <img src="/Users/harshvardhankedia/Desktop/DSa project/DSA.jpeg" alt="Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="searching.html">Searching</a></li>
+                <li><a href="searching.html">Sorting</a></li>
+                <li><a href="hashing.html">Hashing</a></li>
+                <li><a href="linkedlist.html">Linked List</a></li>
+                <li><a href="stack.html">Stack</a></li>
+                <li><a href="trees.html">Tree/Graph</a></li>
+                <div class="back-image">
+                    <a href="video.html"><img src="backbutton.png"></a>
+                </div>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <aside id="sidebar" class="sidebar">
+            <button id="collapseBtn" class="collapse-btn"><h2>Lab Sections ☰</h2></button>
+            <nav>
+                <ul>
+                    <li><a href="sorting_aim.html">Aim</a></li>
+                    <li><a href="sorting_algo.html">Algorithm</a></li>
+                    <li><a href="sort_pretest.html">Pretest</a></li>
+                    <li><a href="video.html">Video</a></li>
+                    <li><a href="sorting_simulation.html">Simulation</a></li>
+                    <li><a href="sort_posttest.html">Posttest</a></li>
+                    <li><a href="sorting_quiz.html">Quiz</a></li>
+                </ul>
+            </nav>
+        </aside>
+        <main id="mainContent" class="content">
+            <div class="centered-content">
+                <div class="container">
+                    <h1>INSERTION SORT</h1>
+                    <div class="array-container" id="array-container"></div>
+                    <div class="controls">
+                        <button onclick="generateArray()">Generate New Array</button>
+                        <button onclick="insertionSort()">Start Insertion Sort</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section quick-links">
+                <b><u><h4>Quick Links</h4></u></b>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../about.html">About Us</a></li>
+                    <li><a href="../algorithm page final/algorithm.html">Algorithms</a></li>
+                    <li><a href="../contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section contact-details">
+                <b><u><h4>Get in touch with us!</h4></u></b>
+                <p>Email: DSAproject@gmail.com</p>
+                <p>Address: Shri Ramdeobaba College of Engineering & Management, Nagpur</p>
+                <p>Pin: 440013</p>
+            </div>
+            <div class="footer-section qr-code">
+                <img src="QR.jpg" alt="QR Code">
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        let array = [];
+
+        function generateArray() {
+            const container = document.getElementById('array-container');
+            container.innerHTML = ''; // Clear the container
+            array = []; // Reset array
+
+            // Generate random array
+            for (let i = 0; i < 10; i++) {
+                const randomNum = Math.floor(Math.random() * 100) + 1;
+                array.push(randomNum);
+            }
+
+            // Display array as bars
+            for (let i = 0; i < array.length; i++) {
+                const bar = document.createElement('div');
+                bar.classList.add('bar');
+                bar.style.height = array[i] * 3 + 'px'; // Scale the height for visibility
+                bar.innerText = array[i];
+                container.appendChild(bar);
+            }
+        }
+
+        async function insertionSort() {
+            const bars = document.getElementsByClassName('bar');
+
+            for (let i = 1; i < array.length; i++) {
+                let key = array[i];
+                let j = i - 1;
+
+                // Highlight the current element being sorted in yellow
+                bars[i].classList.add('active');
+
+                // Pause for 2 seconds to visualize the change
+                await new Promise(resolve => setTimeout(resolve, 2000));
+
+                while (j >= 0 && array[j] > key) {
+                    array[j + 1] = array[j];
+                    
+                    // Visualize the bar being moved to the right
+                    bars[j + 1].style.height = bars[j].style.height;
+                    bars[j + 1].innerText = bars[j].innerText;
+                    
+                    // Change the color of the element being moved
+                    bars[j + 1].classList.add('active');
+                    bars[j].classList.remove('active');
+                    
+                    // Pause for 2 seconds to visualize the change
+                    await new Promise(resolve => setTimeout(resolve, 2000));
+
+                    j = j - 1;
+                }
+                array[j + 1] = key;
+
+                // Insert the current element at its correct position
+                bars[j + 1].style.height = key * 3 + 'px';
+                bars[j + 1].innerText = key;
+
+                // Pause for 2 seconds to show the placement
+                await new Promise(resolve => setTimeout(resolve, 2000));
+
+                // Mark the current element as sorted and remove highlight
+                bars[i].classList.remove('active');
+                bars[j + 1].classList.add('sorted');
+            }
+        }
+
+        // Initialize with a random array when the page loads
+        generateArray();
+    </script>
+</body>
+</html>

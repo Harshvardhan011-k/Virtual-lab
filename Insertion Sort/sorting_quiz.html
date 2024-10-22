@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>INSERTION SORT QUIZ</title>
+    <link rel="stylesheet" type="text/css" href="quiz.css">
+    <link rel="stylesheet" href="newfinal.css">
+    <style>
+        .open-form-btn {
+            background-color: #90EE90; /* Light green color */
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            font-size: 16px;
+            border-radius: 25px; /* Curvy edges */
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-top: 20px;
+        }
+        .open-form-btn:hover {
+            background-color: #66CC66; /* Darker green on hover */
+        }
+
+        .content {
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>INSERTION SORT - QUIZ</h1>
+    </header>
+
+
+<div class="container">
+    <aside id="sidebar" class="sidebar">
+        <button id="collapseBtn" class="collapse-btn"><h2>Lab Sections ☰</h2></button>
+        <nav>
+            <ul>
+                <li><a href="sorting_aim.html">Aim</a></li>
+                <li><a href="sorting_algo.html">Algorithm</a></li>
+                <li><a href="sort_pretest.html">Pretest</a></li>
+                <li><a href="video.html">Video </a></li>
+                <li><a href="sorting_simulation.html">Simulation</a></li>
+                <li><a href="sort_posttest.html">Posttest</a></li>
+                <li><a href="sorting_quiz.html"> Quiz</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+        <main id="mainContent" class="content">
+            <div class="centered-content">
+                <section class="questions">
+                    <h2>Questions</h2>
+                    <div id="question-container">
+                        <!-- All questions will be dynamically inserted here -->
+                    </div>    
+                    <button id="submit-quiz" class="btn">Submit Quiz</button>
+                </section>
+        
+                <section class="results">
+                    <h2>Results</h2>
+                    <p>You got <span id="correct">0</span> out of <span id="total">0</span> correct!</p>
+                    <button id="restart" class="btn">Restart Quiz</button>
+
+                    <h3>Kindly take a moment to fill out the feedback form</h3>
+                    <button class="open-form-btn" onclick="openGoogleForm()">Open Google Form</button>
+            
+                    <script>
+                        function openGoogleForm() {
+                            window.open(
+                                "https://docs.google.com/forms/d/e/1FAIpQLScAwKesMJ9kjxGcEfVYW0UEDh2s30bht2vK1pQFWbwcDN4nUQ/viewform",
+                                "_blank"
+                            );
+                        }
+                    </script>
+                </section>
+            </div>
+
+            
+    </main>
+   
+</div>
+<footer>
+    <p>&copy; 2024 INSERTION SORT QUIZ</p>
+</footer>
+
+    <script src="linearquiz.js"></script>
+    <script src="sidescript.js"></script>
+</body>
+</html>
