@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>STACK QUIZ</title>
+    <link rel="stylesheet" type="text/css" href="quiz.css">
+    <link rel="stylesheet" href="newfinal.css">
+    <style>
+        .open-form-btn {
+            background-color: #90EE90; /* Light green color */
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            font-size: 16px;
+            border-radius: 25px; /* Curvy edges */
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-top: 20px;
+        }
+        .open-form-btn:hover {
+            background-color: #259EE4; /* Darker green on hover */
+        }
+
+        .content {
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-image">
+            <img src="/Users/harshvardhankedia/Desktop/DSa project/DSA.jpeg" alt="Logo">
+        </div>
+        <h1>STACK-QUIZ</h1>
+        <div class="back-image">
+            <a href="stacksposttest.html"><img src = "backbutton.png"></a>
+        </div>
+    </header>
+
+
+<div class="container">
+    <aside id="sidebar" class="sidebar">
+        <button id="collapseBtn" class="collapse-btn"><h2>Lab Sections ☰</h2></button>
+        <nav>
+            <ul>
+                <li><a href="StackAim.html">Aim</a></li>
+                <li><a href="stackalgorithm.html">Algorithm</a></li>
+                <li><a href="stackspretest.html">Pretest</a></li>
+                <li><a href="Stackvideo.html">Video </a></li>
+                <li><a href="stacksimulation.html">Simulation</a></li>
+                <li><a href="stacksposttest.html">Posttest</a></li>
+                <li><a href="stacksquiz.html"> Quiz</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+        <main id="mainContent" class="content">
+            <div class="centered-content">
+                <section class="questions">
+                    <h2>Questions</h2>
+                    <div id="question-container">
+                        <!-- All questions will be dynamically inserted here -->
+                    </div>    
+                    <button id="submit-quiz" class="btn">Submit Quiz</button>
+                </section>
+        
+                <section class="results">
+                    <h2>Results</h2>
+                    <p>You got <span id="correct">0</span> out of <span id="total">0</span> correct!</p>
+                    <button id="restart" class="btn">Restart Quiz</button>
+
+                </section>
+                <script>
+                    function openGoogleForm() {
+                        window.open(
+                            "https://docs.google.com/forms/d/e/1FAIpQLScAwKesMJ9kjxGcEfVYW0UEDh2s30bht2vK1pQFWbwcDN4nUQ/viewform",
+                            "_blank"
+                        );
+                    }
+                </script>
+            </div>
+
+            
+    </main>
+   
+</div>
+<footer>
+    <p>&copy; 2024 STACK QUIZ</p>
+</footer>
+
+    <script src="stackquiz.js"></script>
+    <script src="sidescript.js"></script>
+</body>
+</html>
