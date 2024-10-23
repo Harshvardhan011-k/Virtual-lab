@@ -85,25 +85,6 @@ h1 {
     font-weight: bold;
 }
 
-.open-form-btn {
-            background-color: #90EE90; /* Light green color */
-            color: white;
-            border: none;
-            padding: 12px 24px;
-            font-size: 16px;
-            border-radius: 25px; /* Curvy edges */
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-            margin-top: 20px;
-        }
-        .open-form-btn:hover {
-            background-color: #66CC66; /* Darker green on hover */
-        }
-
-        .content {
-            padding: 20px;
-        }
-
 ul {
     list-style-type: none; /* Removes dots from option boxes */
     padding: 0;
