@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
    
-     <link rel="stylesheet" href="newfinal.css">
+    <link rel="stylesheet" href="newfinal.css">
 </head>
 <body>
     <header>
@@ -15,7 +15,7 @@
         <nav>
             <ul>
                 <li><a href="https://harshvardhan011-k.github.io/Virtual-lab/Linear%20serach/linear_aim.html">Searching</a></li>
-                 <li><a href="https://harshvardhan011-k.github.io/Virtual-lab/Insertion%20Sort/sorting_aim.html">Sorting</a></li>
+                <li><a href="https://harshvardhan011-k.github.io/Virtual-lab/Insertion%20Sort/sorting_aim.html">Sorting</a></li>
                 <li><a href="https://harshvardhan011-k.github.io/Virtual-lab/Hashing/AIM.html">Hashing</a></li>
                 <li><a href="https://harshvardhan011-k.github.io/Virtual-lab/dsa%20project/AIM.html">Linked List</a></li>
                 <li><a href="https://harshvardhan011-k.github.io/Virtual-lab/algorithm%20page%20final/StackAim.html">Stack</a></li>
@@ -38,123 +38,117 @@
                     <li><a href="video.html">Video </a></li>
                     <li><a href="simulation.html">Simulation</a></li>
                     <li><a href="postest.html">Posttest</a></li>
-                    <li><a href="quiz.html"> Quiz</a></li>
+                    <li><a href="quiz.html">Quiz</a></li>
                 </ul>
             </nav>
         </aside>
         <main id="mainContent" class="content">
-          <div class="centered-content">
-      <div class="container2">
-
-        <title>Intersection of two sorted Linked List</title>
-        <div>
-            <br>
-            <h1>Intersection of two sorted Linked List</h1>
-            <div id="controls">
-                <button id="playBtn1">Play List 1</button>
-                <button id="pauseBtn1">Pause List 1</button>
-                <button id="playBtn2">Play List 2</button>
-                <button id="pauseBtn2">Pause List 2</button>
+            <div class="centered-content">
+                <div class="container2">
+                    <br>
+                    <br>
+                    <title>Intersection of two sorted Linked List</title>
+                    <div>
+                        <h1>Intersection of two sorted Linked List</h1>
+                        <div id="controls">
+                            <button id="traversalBtn">Traverse</button>
+                        </div>
+                        <div class="list">
+                            <h2>Linked List 1:</h2>
+                            <p id="list1"></p>
+                        </div>
+                        <div class="list">
+                            <h2>Linked List 2:</h2>
+                            <p id="list2"></p>
+                        </div>
+                        <div class="list">
+                            <h2>Intersection List:</h2>
+                            <p id="intersectionList"></p>
+                        </div>
+                    </div>
+                    <style>
+                        h1 {
+                            color: #333;
+                            font-size: 32px;
+                            margin-bottom: 20px;
+                        }
+                        #controls {
+                            margin-bottom: 30px;
+                        }
+                        button {
+                            padding: 15px 30px;
+                            margin: 0 15px;
+                            font-size: 20px;
+                            color: #fff;
+                            background-color: #007bff;
+                            border: none;
+                            border-radius: 8px;
+                            cursor: pointer;
+                            transition: background-color 0.3s;
+                        }
+                        button:hover {
+                            background-color: #0056b3;
+                        }
+                        button:disabled {
+                            background-color: #6c757d;
+                            cursor: not-allowed;
+                        }
+                        .list {
+                            margin: 20px auto;
+                            padding: 20px;
+                            max-width: 600px;
+                            border-radius: 10px;
+                            background-color: #fff;
+                            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                            font-size: 24px;
+                            text-align: left;
+                        }
+                        .highlight {
+                            color: #ff6347;
+                            font-weight: bold;
+                        }
+                        .list h2 {
+                            font-size: 24px;
+                            color: #333;
+                            margin-bottom: 10px;
+                            padding: 0 10px;
+                        }
+                        .list p {
+                            font-size: 22px;
+                            color: #555;
+                            padding: 0 10px;
+                            display: flex;
+                            flex-wrap: wrap;
+                            gap: 10px;
+                        }
+                        .box {
+                            padding: 10px 15px;
+                            border: 2px solid #007bff;
+                            border-radius: 5px;
+                            background-color: #e6f7ff;
+                            min-width: 50px;
+                            text-align: center;
+                            display: inline-block;
+                            position: relative;
+                        }
+                        .arrow {
+                            margin-left: 10px;
+                            margin-right: 10px;
+                            font-size: 20px;
+                            line-height: 35px;
+                        }
+                        #intersectionList {
+                            font-size: 24px;
+                            font-weight: bold;
+                            color: #007bff;
+                            padding: 0 10px;
+                        }
+                    </style>
+                </div>
             </div>
-            <div class="list">
-                <h2>Linked List 1:</h2>
-                <p id="list1"></p>
-            </div>
-            <div class="list">
-                <h2>Linked List 2:</h2>
-                <p id="list2"></p>
-            </div>
-            <div class="list">
-                <h2>Intersection List:</h2>
-                <p id="intersectionList"></p>
-            </div>
-        </div>
-        <style>
-          
-            h1 {
-                color: #333;
-                font-size: 32px;
-                margin-bottom: 20px;
-            }
-            #controls {
-                margin-bottom: 30px;
-            }
-            button {
-                padding: 15px 30px;
-                margin: 0 15px;
-                font-size: 20px;
-                color: #fff;
-                background-color: #007bff;
-                border: none;
-                border-radius: 8px;
-                cursor: pointer;
-                transition: background-color 0.3s;
-            }
-            button:hover {
-                background-color: #0056b3;
-            }
-            button:disabled {
-                background-color: #6c757d;
-                cursor: not-allowed;
-            }
-            .list {
-                margin: 20px auto;
-                padding: 20px;
-                max-width: 600px;
-                border-radius: 10px;
-                background-color: #fff;
-                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-                font-size: 24px;
-                text-align: left;
-            }
-            .highlight {
-                color: #ff6347;
-                font-weight: bold;
-            }
-            .list h2 {
-                font-size: 24px;
-                color: #333;
-                margin-bottom: 10px;
-                padding: 0 10px;
-            }
-            .list p {
-                font-size: 22px;
-                color: #555;
-                padding: 0 10px;
-                display: flex;
-                flex-wrap: wrap;
-                gap: 10px;
-            }
-            .box {
-                padding: 10px 15px;
-                border: 2px solid #007bff;
-                border-radius: 5px;
-                background-color: #e6f7ff;
-                min-width: 50px;
-                text-align: center;
-                display: inline-block;
-                position: relative;
-            }
-            .arrow {
-                margin-left: 10px;
-                margin-right: 10px;
-                font-size: 20px;
-                line-height: 35px;
-            }
-            #intersectionList {
-                font-size: 24px;
-                font-weight: bold;
-                color: #007bff;
-                padding: 0 10px;
-            }
-        </style>
-        
-      </div>
-    </div>
-    </main>
+        </main>
     </div>
     
-   
     <footer class="footer">
         <div class="footer-container">
             <div class="footer-section quick-links">
@@ -169,13 +163,10 @@
             <div class="footer-section contact-details">
                 <b><u>  <h4>Get in touch with us!</h4> </u> </b>
                <p>Email: DSAproject@gmail.com</p> 
-                <p></p>
-                <p>Address: Shri Ramdeobaba College of </p>
-                <p>Engineering & Management,Nagpur </p>
+                <p>Address: Shri Ramdeobaba College of Engineering & Management, Nagpur</p>
                 <p>Pin :  440013</p>
             </div>
             <div class="footer-section qr-code">
-                
                 <img src="QR.jpg" alt="QR Code">
             </div>
         </div>
