@@ -45,6 +45,10 @@
             background-color: #FFC107;
         }
 
+        .bar.changing {
+            background-color: #FF5722;
+        }
+
         .controls {
             margin-top: 20px;
         }
@@ -70,16 +74,16 @@
     <header>
         <h1>VIRTUAL LABS</h1>
         <div class="header-image">
-            <img src="../logo.png" alt="Logo">
+            <img src="/Users/harshvardhankedia/Desktop/DSa project/DSA.jpeg" alt="Logo">
         </div>
         <nav>
             <ul>
-                 <li><a href="https://harshvardhan011-k.github.io/Virtual-lab/Linear%20serach/linear_aim.html">Searching</a></li>
-                <li><a href="sorting_aim.html">Sorting</a></li>
-                <li><a href="https://harshvardhan011-k.github.io/Virtual-lab/Hashing/AIM.html">Hashing</a></li>
-                <li><a href="https://harshvardhan011-k.github.io/Virtual-lab/dsa%20project/AIM.html">Linked List</a></li>
-                <li><a href="https://harshvardhan011-k.github.io/Virtual-lab/algorithm%20page%20final/StackAim.html">Stack</a></li>
-                <li><a href="https://harshvardhan011-k.github.io/Virtual-lab/Trees/trees_aim.html">Tree</a></li>
+                <li><a href="searching.html">Searching</a></li>
+                <li><a href="searching.html">Sorting</a></li>
+                <li><a href="hashing.html">Hashing</a></li>
+                <li><a href="linkedlist.html">Linked List</a></li>
+                <li><a href="stack.html">Stack</a></li>
+                <li><a href="trees.html">Tree/Graph</a></li>
                 <div class="back-image">
                     <a href="video.html"><img src="backbutton.png"></a>
                 </div>
@@ -112,6 +116,7 @@
                         <button onclick="insertionSort()">Start Insertion Sort</button>
                     </div>
                 </div>
+                <h3 id="changingElement">Current Changing Element: None</h3>
             </div>
         </main>
     </div>
@@ -144,20 +149,23 @@
 
         function generateArray() {
             const container = document.getElementById('array-container');
-            container.innerHTML = ''; // Clear the container
-            array = []; // Reset array
+            container.innerHTML = ''; 
+            array = []; 
 
-            // Generate random array
-            for (let i = 0; i < 10; i++) {
+   
+            const arraySize = Math.floor(Math.random() * 5) + 8;
+
+ 
+            for (let i = 0; i < arraySize; i++) {
                 const randomNum = Math.floor(Math.random() * 100) + 1;
                 array.push(randomNum);
             }
 
-            // Display array as bars
+   
             for (let i = 0; i < array.length; i++) {
                 const bar = document.createElement('div');
                 bar.classList.add('bar');
-                bar.style.height = array[i] * 3 + 'px'; // Scale the height for visibility
+                bar.style.height = array[i] * 3 + 'px'; 
                 bar.innerText = array[i];
                 container.appendChild(bar);
             }
@@ -165,49 +173,53 @@
 
         async function insertionSort() {
             const bars = document.getElementsByClassName('bar');
+            const changingElementDisplay = document.getElementById('changingElement');
 
             for (let i = 1; i < array.length; i++) {
                 let key = array[i];
                 let j = i - 1;
 
-                // Highlight the current element being sorted in yellow
-                bars[i].classList.add('active');
 
-                // Pause for 2 seconds to visualize the change
-                await new Promise(resolve => setTimeout(resolve, 2000));
+                bars[i].classList.add('active');
+                changingElementDisplay.innerText = `Current Changing Element: ${key}`;
+
+                await new Promise(resolve => setTimeout(resolve, 1000));
 
                 while (j >= 0 && array[j] > key) {
                     array[j + 1] = array[j];
                     
-                    // Visualize the bar being moved to the right
+
                     bars[j + 1].style.height = bars[j].style.height;
                     bars[j + 1].innerText = bars[j].innerText;
                     
-                    // Change the color of the element being moved
-                    bars[j + 1].classList.add('active');
+
+                    bars[j + 1].classList.add('changing');
                     bars[j].classList.remove('active');
                     
-                    // Pause for 2 seconds to visualize the change
-                    await new Promise(resolve => setTimeout(resolve, 2000));
+  
+                    await new Promise(resolve => setTimeout(resolve, 1000));
 
                     j = j - 1;
                 }
                 array[j + 1] = key;
 
-                // Insert the current element at its correct position
+
                 bars[j + 1].style.height = key * 3 + 'px';
                 bars[j + 1].innerText = key;
 
-                // Pause for 2 seconds to show the placement
-                await new Promise(resolve => setTimeout(resolve, 2000));
 
-                // Mark the current element as sorted and remove highlight
-                bars[i].classList.remove('active');
+                await new Promise(resolve => setTimeout(resolve, 1000));
+
+
+                bars[i].classList.remove('changing');
                 bars[j + 1].classList.add('sorted');
             }
+
+
+            changingElementDisplay.innerText = "Current Changing Element: None";
         }
 
-        // Initialize with a random array when the page loads
+
         generateArray();
     </script>
 </body>
