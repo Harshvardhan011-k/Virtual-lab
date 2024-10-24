@@ -185,7 +185,7 @@ main {
 /* Background color, image, and padding for the container-fluid */
 .container-fluid.bg-primary.py-5.mb-5.page-header {
     background-color: #007bff; /* Bootstrap primary color */
-    background-image: url('breadcrumb.png'); /* Add background image */
+    background-image: url('breadcrumb.jpeg'); /* Add background image */
     background-size: cover; /* Ensure image covers the entire section */
     background-position: center; /* Center the image */
     background-repeat: no-repeat; /* Do not repeat the image */
