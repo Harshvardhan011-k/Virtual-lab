@@ -1,4 +1,3 @@
-// Node class for linked list
 class Node {
     constructor(value, next = null) {
         this.value = value;
@@ -27,30 +26,52 @@ class LinkedList {
     }
 
     // Display list with optional highlights and arrows
-    display(highlight = []) {
-        let current = this.head;
+    display(highlight = [], current = null) {
+        let currentNode = this.head;
         let result = [];
-        while (current) {
-            const value = highlight.includes(current.value) 
-                ? `<span class="box highlight">${current.value}</span>`
-                : `<span class="box">${current.value}</span>`;
+        while (currentNode) {
+            const isHighlighted = highlight.includes(currentNode.value);
+            const isCurrent = current === currentNode.value;
+
+            const value = isCurrent
+                ? `<span class="box current">${currentNode.value}</span>`
+                : isHighlighted
+                    ? `<span class="box highlight">${currentNode.value}</span>`
+                    : `<span class="box">${currentNode.value}</span>`;
+
             result.push(value);
-            if (current.next) {
-                result.push(`<span class="arrow">→</span>`);
+
+            if (currentNode.next) {
+                const arrowClass = isCurrent ? 'arrow traverse' : 'arrow';
+                result.push(`<span class="${arrowClass}">→</span>`);
             }
-            current = current.next;
+            currentNode = currentNode.next;
         }
         return result.join('');
     }
 }
 
-// Initialize lists with new inputs
+// Initialize lists with random inputs
 let list1 = new LinkedList();
 let list2 = new LinkedList();
+let listsInitialized = false;  // To track if lists are initialized already
+
+const generateRandomList = (size, min, max) => {
+    let list = [];
+    for (let i = 0; i < size; i++) {
+        list.push(Math.floor(Math.random() * (max - min + 1)) + min);
+    }
+    return [...new Set(list)].sort((a, b) => a - b); // Ensure unique and sorted list
+};
 
 const initializeLists = () => {
-    [1, 21, 33, 43].forEach(val => list1.append(val));
-    [2, 33, 44, 56].forEach(val => list2.append(val));
+    if (!listsInitialized) {
+        list1 = new LinkedList();
+        list2 = new LinkedList();
+        generateRandomList(4, 1, 50).forEach(val => list1.append(val));
+        generateRandomList(4, 1, 50).forEach(val => list2.append(val));
+        listsInitialized = true;
+    }
 };
 
 // Find intersection
@@ -73,89 +94,51 @@ function findIntersection(list1, list2) {
     return intersection;
 }
 
-// Update display
-function updateDisplay(list, highlight = []) {
-    document.getElementById(list === 1 ? 'list1' : 'list2').innerHTML = 
-        list === 1 ? list1.display(highlight) : list2.display(highlight);
+// Update display for list with current traversal state
+function updateDisplay(list, highlight = [], current = null) {
+    document.getElementById(list === 1 ? 'list1' : 'list2').innerHTML =
+        list === 1 ? list1.display(highlight, current) : list2.display(highlight, current);
 }
 
-// Simulation control variables
-let index1 = 0, index2 = 0;
-let interval1, interval2;
-let traversalComplete1 = false, traversalComplete2 = false;
-let intersection = [];
+// Traverse both lists and highlight common elements
+function traverseLists(list1, list2, intersection) {
+    let current1 = list1.head;
+    let current2 = list2.head;
+    let interval = 1000;
 
-// Traverse and highlight list1
-function playList1() {
-    clearInterval(interval1);
-    index1 = 0;
-    traversalComplete1 = false;
-    interval1 = setInterval(() => {
-        let node = list1.head;
-        for (let i = 0; i < index1; i++) {
-            if (node) node = node.next;
-        }
-        if (node) {
-            updateDisplay(1, [node.value]);
-            index1++;
+    const traverseStep = () => {
+        if (current1 || current2) {
+            updateDisplay(1, intersection, current1 ? current1.value : null);
+            updateDisplay(2, intersection, current2 ? current2.value : null);
+
+            if (current1) current1 = current1.next;
+            if (current2) current2 = current2.next;
+
+            setTimeout(traverseStep, interval);
         } else {
-            clearInterval(interval1);
-            traversalComplete1 = true;
-            checkComplete();
+            displayIntersection(intersection);
         }
-    }, 2000); // Slowed down to 2 seconds per step
+    };
+
+    traverseStep();
 }
 
-// Traverse and highlight list2
-function playList2() {
-    clearInterval(interval2);
-    index2 = 0;
-    traversalComplete2 = false;
-    interval2 = setInterval(() => {
-        let node = list2.head;
-        for (let i = 0; i < index2; i++) {
-            if (node) node = node.next;
-        }
-        if (node) {
-            updateDisplay(2, [node.value]);
-            index2++;
-        } else {
-            clearInterval(interval2);
-            traversalComplete2 = true;
-            checkComplete();
-        }
-    }, 2000); // Slowed down to 2 seconds per step
-}
-
-// Pause functions
-function pauseList1() { clearInterval(interval1); }
-function pauseList2() { clearInterval(interval2); }
-
-// Check if both traversals are complete and find intersection
-function checkComplete() {
-    if (traversalComplete1 && traversalComplete2) {
-        intersection = findIntersection(list1, list2);
-        highlightIntersection();
-    }
-}
-
-// Highlight intersection
-function highlightIntersection() {
-    const intersectionText = intersection.length > 0 
+// Display intersection
+function displayIntersection(intersection) {
+    const intersectionText = intersection.length > 0
         ? `Intersection: ${intersection.join(', ')}`
         : 'Intersection: No common elements';
     document.getElementById('intersectionList').textContent = intersectionText;
-    updateDisplay(1, intersection);
-    updateDisplay(2, intersection);
 }
 
 // Set up event listeners
-document.getElementById('playBtn1').addEventListener('click', playList1);
-document.getElementById('pauseBtn1').addEventListener('click', pauseList1);
-document.getElementById('playBtn2').addEventListener('click', playList2);
-document.getElementById('pauseBtn2').addEventListener('click', pauseList2);
+document.getElementById('traversalBtn').addEventListener('click', () => {
+    initializeLists();
+    const intersection = findIntersection(list1, list2);
+    traverseLists(list1, list2, intersection);
+});
 
-// Initialize and display lists
+// Initialize and display lists on page load
 initializeLists();
-updateDisplay(1, []);
-updateDisplay(2, []);
+updateDisplay(1);
+updateDisplay(2);
