@@ -44,12 +44,12 @@ h1 {
 }
 
 .btn:hover {
-    background-color: #218838; /* Darker green on hover */
+    background-color: #28a745; /* Darker green on hover */
 }
 
 .answer-btn {
     background: #fff;
-    color: #333;
+    color: #28a745;
     font-weight: 500;
     border: 1px solid #333;
     padding: 10px;
@@ -63,12 +63,12 @@ h1 {
 }
 
 .answer-btn:hover {
-    background: #004d40; /* Black on hover */
+    background: #28a745; /* Black on hover */
     color: #fff;
 }
 
 .answer-btn.selected {
-    background: #4caf50; /* Highlight selected answer with green */
+    background: #28a745; /* Highlight selected answer with green */
     color: #fff;
 }
 
